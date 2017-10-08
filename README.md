@@ -1,2 +1,1 @@
-# JS-jQuery-Ajax
-SEIP-Practices
+# JS, jQuery, Ajax SEIP-Practices

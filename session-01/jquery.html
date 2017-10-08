@@ -1,0 +1,57 @@
+<html>
+<head>
+	<title>Undersanding Jquery</title>
+
+	<style type="text/css">
+
+		#container{
+			background: green;
+			color: white;
+		}
+
+		.title{
+			height: 200px;
+		}
+
+
+	</style>
+
+</head>
+<body>
+
+	<h1 id="container" class="">Welcome to Jquery</h1>
+
+	<button id="btnClick">Click Me</button>
+
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+	<script type="text/javascript">
+
+
+
+		$(document).ready(function(){
+
+			$('#btnClick').bind('click',function(){
+
+				$('#container').css({
+					'background':'red',
+					'color':'black'
+				});
+
+
+			//	$('h1').addClass('title');
+
+
+
+			});
+
+		});
+
+
+		console.log('hello');
+
+	</script>
+
+</body>
+</html>
