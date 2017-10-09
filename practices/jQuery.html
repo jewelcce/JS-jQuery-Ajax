@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+    <style>
+        #title{
+            background-color: #32cd32;
+            color:#ffffff;
+        }
+        .title {
+            height:200px;
+        }
+
+    </style>
+</head>
+<body>
+
+<h1 id="title" class="title">Welcome to jQuery</h1>
+
+<button id="clkBtn" type="button"> Change Effect </button>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+
+$(document).ready(function(){
+
+    $('#clkBtn').bind('click',function(){
+
+        $('#title').css({
+            'background-color' : '#066ccd',
+            'color' : '#cad0ff'
+        });
+
+        $('#title').removeClass('title');
+
+
+
+    });
+})
+
+</script>
+
+</body>
+</html>
