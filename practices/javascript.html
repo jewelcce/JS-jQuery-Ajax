@@ -6,5 +6,42 @@
 </head>
 <body>
 
+<h1>Welcome to understanding JavaScript</h1>
+
+<h3 id="arrayLiteral"></h3>
+
+<h3 id="objectLiteral"></h3>
+
+<script>
+
+ var car = ['BMW', 'Ferrari', 'Mercedes Benz'];
+
+ console.log(car[2]);
+ document.getElementById("arrayLiteral").innerHTML = car[2];
+
+ // array literal
+
+ var manufacturer = {
+
+     name: 'BMW',
+     model: 'x5',
+     color: 'black',
+     price: 200000,
+
+     calculate:function (quantity){
+
+         var x = quantity;
+
+         return 2000*x;
+     }
+ };
+
+ console.log(manufacturer.calculate(10));
+ var price = manufacturer.calculate(10);
+ document.getElementById("objectLiteral").innerHTML = price;
+ //object literal
+
+</script>
+
 </body>
 </html>
