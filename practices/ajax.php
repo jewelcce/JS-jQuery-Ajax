@@ -89,12 +89,13 @@
                     country = value.name;
                     city = value.city;
 
-                    html = html + '<tr><td>'+country+'</td><td>'+city+'</td><td data-id='+id+'><span style=\"cursor:pointer;\">Show</span></td></tr>';
+                    html = html + '<tr><td>'+country+'</td><td>'+city+'</td><td data-id='+id+' style=\"cursor:pointer;\">View</td></tr>';
 
                     // this is complex to understand
                     // step 1 : table header will be added along with 1st loop's content into "html" variable
                     // step 2 : value of "html" will concatenate with 2nd loop's
                     // this process will continue until loop is not end
+                    // <span style="cursor:pointer;">Show</span>
 
                 });
 
@@ -111,3 +112,4 @@
 
 </body>
 </html>
+
