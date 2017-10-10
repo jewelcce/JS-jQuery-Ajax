@@ -16,6 +16,13 @@
 
 <button id="clkBtn" type="button"> Change Effect </button>
 
+<form>
+    <input id="name" placeholder="Country Name">
+    <input id="city" placeholder="City Name">
+    <button id="submitBtn" type="button"> Submit </button>
+
+</form>
+
 <div id="countryList"></div>
 
 
@@ -24,7 +31,41 @@
 
     $(document).ready(function(){
 
+        $('#submitBtn').bind('click',function(e){
+
+            e.preventDefault();
+
+            var country_name = $('#name').val();
+            var city_name = $('#city').val();
+            var action = 'store.php';
+
+            $.ajax({
+
+                url: action,
+//                Action URL
+                method:"post",
+//                Form Method
+                data : {
+                    country_name:country_name,
+                    city_name:city_name
+                }
+//                collect form data
+
+            }).done(function(response) {
+
+                console.log(response);
+
+                $('#name').val('');
+                $('#city').val('');
+                // clear input fields
+
+            });
+
+        });
+
+
         $('#clkBtn').bind('click',function(){
+
 
             $('#title').css({
                 'background-color' : '#066ccd',
@@ -40,15 +81,15 @@
 
                 console.log(response);
 
-                var html = '<table><tr><th>ID</th><th>Country</th><th>City</th></tr>';
+                var html = '<table><tr><th>Country</th><th>City</th><th>Action</th></tr>';
 
                 $.each(response,function(property,value){
 
-                    id = property;
+                    id = value.id;
                     country = value.name;
                     city = value.city;
 
-                    html = html + '<tr><td>'+id+'</td><td>'+country+'</td><td>'+city+'</td></tr>';
+                    html = html + '<tr><td>'+country+'</td><td>'+city+'</td><td data-id='+id+'><span style=\"cursor:pointer;\">Show</span></td></tr>';
 
                     // this is complex to understand
                     // step 1 : table header will be added along with 1st loop's content into "html" variable
@@ -66,5 +107,7 @@
     })
 
 </script>
+
+
 </body>
 </html>
